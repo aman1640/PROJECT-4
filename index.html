@@ -3,18 +3,44 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>LDU Factorization Calculator</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <h1> Hello World</h1>
-    <p>We’ve trained a model called ChatGPT which interacts in a conversational way. The dialogue format makes it possible for ChatGPT to answer followup questions, admit its mistakes, challenge incorrect premises, and reject inappropriate requests.
+    <header>
+        <h1>LDU Factorization Calculator</h1>
+    </header>
 
-        ChatGPT is a sibling model to InstructGPT⁠, which is trained to follow an instruction in a prompt and provide a detailed response.
-        
-        We are excited to introduce ChatGPT to get users’ feedback and learn about its strengths and weaknesses. During the research preview, usage of ChatGPT is free. Try it now at chatgpt.com⁠(opens in a new window).</p>
+    <main>
+        <section id="input-section">
+            <h2>Step 1: Enter Matrix Order</h2>
+            <input type="number" id="matrixOrder" min="2" max="5" placeholder="Matrix Order (e.g., 3)">
+            <button onclick="generateMatrixInputs()">Generate Matrix</button>
+        </section>
 
-        <H2> aman verma
-            
-        </H2>
-    </body>
+        <section id="matrix-section" style="display: none;">
+            <h2>Step 2: Enter Matrix Elements</h2>
+            <div id="matrixInputs"></div>
+            <button onclick="performLDUFactorization()">Calculate LDU Factorization</button>
+        </section>
+
+        <section id="solution-section" style="display: none;">
+            <h2>Step 3: LDU Factorization Solution</h2>
+            <h3>Elimination Steps:</h3>
+            <pre id="stepsOutput"></pre>
+            <h3>L Matrix:</h3>
+            <pre id="LMatrix"></pre>
+            <h3>D Matrix:</h3>
+            <pre id="DMatrix"></pre>
+            <h3>U Matrix:</h3>
+            <pre id="UMatrix"></pre>
+        </section>
+    </main>
+
+    <footer>
+        <a href="about.html">About</a>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
 </html>
